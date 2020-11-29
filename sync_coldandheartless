@@ -4,6 +4,6 @@ JEKYLL_HOME="/Users/maryh/Documents/jekyll/coldandheartless"
 
 puts "rsync of coldandheartless.com running"
 
-output=`time /usr/bin/rsync "#{JEKYLL_HOME}"/_site/* 198.74.56.102:/var/www/html`
+output=`time /usr/bin/rsync "#{JEKYLL_HOME}"/_site/* 198.74.56.102:/var/www/html/coldandheartless`
 
 puts "#{output}"
