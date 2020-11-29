@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require 'slugify'
+require 'date'
+
+JEKYLL_HOME="/Users/maryh/Documents/jekyll/coldandheartless"
+puts "Post title: "
+official_title = gets.chomp
+title = official_title.slugify
+start_time = Time.now
+date = start_time.strftime("%F")
+year = start_time.strftime("%Y")
+month = start_time.strftime("%m")
+
+File.open("#{JEKYLL_HOME}/_posts/#{date}-#{title}.md", "w") do |out|
+	out.puts "---"
+	out.puts "layout: post"
+	out.puts "title:  \"#{official_title}\""
+	out.puts "date:  #{start_time}"
+	out.puts "permalink: /#{year}/#{month}/#{title}/"
+	out.puts "categories: "
+	out.puts "  - Arts"
+	out.puts "  - Computing"
+	out.puts "---"
+	out.puts ""
+	out.puts "Link:  [link_text](path/to/image or url)"
+	out.puts "Use #{JEKYLL_HOME}/assets/pictures for image galleries"
+	out.puts "Use #{JEKYLL_HOME}/assets/images for images in posts.  It'll take more time, but name them well."
+	out.puts ""
+	out.puts "[Categories](http://coldandheartless.com/categories/)"
+	out.puts ""
+	out.puts "jekyll s to start the server"
+end
+
+puts "#{JEKYLL_HOME}/_posts/#{date}-#{title}.md created."
