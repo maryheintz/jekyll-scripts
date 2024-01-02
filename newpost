@@ -29,7 +29,7 @@ File.open("#{JEKYLL_HOME}/_posts/#{date}-#{title}.md", "w") do |out|
 	out.puts ""
 	out.puts "[Categories](http://coldandheartless.com/categories/)"
 	out.puts ""
-	out.puts "jekyll s to start the server"
+	out.puts "bundle exec jekyll s --incremental to start the server"
 end
 
 puts "#{JEKYLL_HOME}/_posts/#{date}-#{title}.md created."
